@@ -25,7 +25,7 @@ body{
 	.project__main{
 		display       : inline-block;
 		vertical-align: top;
-		max-width     : 600px;
+		min-width     : 600px;
 		margin-right  : 40px;
 		margin-left   : 25px;
 	}

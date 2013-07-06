@@ -111,20 +111,19 @@
 -->
 
 <script type="text/javascript" src="sparkblock.js"></script>
-
-
-<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-size="large" data-count="none" data-text='testing'>Tweet</a>
 <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="https://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
 
 
 <!-- This html will be use for each code example in your project -->
 <div data-schematic='code_html'>
-	<a href="https://twitter.com/share" class="twitter-share-button" data-lang="en" data-size="large" data-count="none" data-text='testing'>Tweet</a>
+	<div style='margin-top:30px;' class='tweet_box'></div>
 </div>
 
 <!-- This html will be use for the example at the top of the page -->
 <div data-schematic='example_html'>
-	<div class='example_data'></div>
+	<div style='margin-bottom:5px'>Data goes in..</div>
+	<code style='font-size:12px;' class='example_data'></code>
+	<div style='margin-bottom:10px;margin-top:20px'>An ASCII bar graph comes out!</div>
 	<div class='example_result'></div>
 </div>
 
@@ -180,22 +179,15 @@
 		/* Example */
 		example_initialize : function(){
 			var gen = function(){
-
 				var result = [];
-
-				_(_.random(4,10)).times(function(){
+				_(_.random(4,7)).times(function(){
 					result.push(_.random(16,86));
-				})
-
-
+				});
 				$('.example_data').text('[' + result.join(', ') + ']');
 				$('.example_result').text(sparkblock(result, true));
-
 			};
-			gen()
-			setInterval(gen, 3000);
-			//This code will be ran once the example html is loaded
-			//Use it to start animations or run demos
+			gen();
+			setInterval(gen, 5000);
 		},
 	});
 </script>
